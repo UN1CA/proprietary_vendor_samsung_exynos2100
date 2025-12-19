@@ -159,7 +159,7 @@ jobs:
           tar cvf ${{ env.latest_shortversion }}_patched_vbmeta.tar vbmeta.img
           rm -f vbmeta.img
 
-      - name: Extract vendor and vendor_dlkm partition
+      - name: Extract vendor partition
         if: env.need_update == 1
         run: |
           tar xvf ${{ env.ap_tar }} super.img.lz4
@@ -208,4 +208,3 @@ jobs:
             ${{ env.pit_file }}
             ${{ env.latest_shortversion }}_patched_vbmeta.tar
             ${{ env.latest_shortversion }}_vendor.zip
-            ${{ env.latest_shortversion }}_vendor_dlkm.zip
